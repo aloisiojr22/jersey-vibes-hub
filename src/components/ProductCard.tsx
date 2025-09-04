@@ -3,6 +3,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Heart, ShoppingCart } from "lucide-react";
 import { useState } from "react";
+import { useCart } from "@/components/CartContext";
+import { useToast } from "@/hooks/use-toast";
 
 interface ProductCardProps {
   id: number;
@@ -29,6 +31,16 @@ const ProductCard = ({
 }: ProductCardProps) => {
   const [isLiked, setIsLiked] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const { addToCart } = useCart();
+  const { toast } = useToast();
+
+  const handleAddToCart = () => {
+    addToCart({ id, name, team, price, image });
+    toast({
+      title: "Produto adicionado!",
+      description: `${team} ${name} foi adicionado ao carrinho.`,
+    });
+  };
 
   return (
     <Card 
@@ -49,7 +61,7 @@ const ProductCard = ({
           
           {/* Badges */}
           <div className="absolute top-3 left-3 flex flex-col gap-2">
-            {isNew && <Badge className="bg-neon-blue text-white">Novo</Badge>}
+            {isNew && <Badge className="bg-neon-cyan text-white">Novo</Badge>}
             {isOnSale && <Badge className="bg-accent">Oferta</Badge>}
           </div>
 
@@ -76,6 +88,7 @@ const ProductCard = ({
             <Button 
               className="w-full bg-gradient-to-r from-primary to-accent hover:shadow-neon transition-all duration-300"
               size="sm"
+              onClick={handleAddToCart}
             >
               <ShoppingCart className="h-4 w-4 mr-2" />
               Adicionar ao Carrinho

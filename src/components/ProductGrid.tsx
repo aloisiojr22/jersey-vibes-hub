@@ -17,11 +17,11 @@ const mockProducts = [
   },
   {
     id: 2,
-    name: "Camisa Away 2024",
-    team: "Real Madrid",
+    name: "Camisa Home 2024",
+    team: "AC Milan",
     price: 329.90,
     image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=400&h=400&fit=crop",
-    category: "La Liga",
+    category: "Serie A",
     isNew: true
   },
   {
@@ -37,15 +37,15 @@ const mockProducts = [
   {
     id: 4,
     name: "Camisa Home 2024",
-    team: "Manchester United",
+    team: "Liverpool",
     price: 349.90,
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=400&fit=crop",
     category: "Premier League"
   },
   {
     id: 5,
-    name: "Camisa Away 2024",
-    team: "Palmeiras",
+    name: "Camisa Tradicional",
+    team: "Vasco da Gama",
     price: 229.90,
     image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=400&fit=crop",
     category: "Brasileirão",
@@ -54,15 +54,15 @@ const mockProducts = [
   {
     id: 6,
     name: "Camisa Home 2024",
-    team: "PSG",
-    price: 369.90,
+    team: "Rangers FC",
+    price: 269.90,
     image: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=400&h=400&fit=crop",
-    category: "Ligue 1"
+    category: "Scottish Premier"
   }
 ];
 
 const ProductGrid = () => {
-  const categories = ["Todos", "Brasileirão", "Premier League", "La Liga", "Ligue 1"];
+  const categories = ["Todos", "Brasileirão", "Premier League", "La Liga", "Serie A", "Scottish Premier"];
 
   const getFilteredProducts = (category: string) => {
     if (category === "Todos") return mockProducts;
@@ -74,7 +74,7 @@ const ProductGrid = () => {
       <div className="container mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-neon-purple to-neon-blue bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-neon-blue to-neon-cyan bg-clip-text text-transparent">
             Coleção Exclusiva
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -84,7 +84,7 @@ const ProductGrid = () => {
 
         {/* Category Tabs */}
         <Tabs defaultValue="Todos" className="w-full">
-          <TabsList className="grid w-full grid-cols-5 mb-8 bg-card">
+          <TabsList className="grid w-full grid-cols-6 mb-8 bg-card">
             {categories.map((category) => (
               <TabsTrigger 
                 key={category} 

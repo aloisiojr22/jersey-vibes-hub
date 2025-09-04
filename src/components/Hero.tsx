@@ -14,8 +14,8 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-neon-purple via-neon-blue to-neon-pink bg-clip-text text-transparent animate-neon-pulse">
-          CAMISAS DE TIME
+        <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-neon-blue via-neon-cyan to-neon-electric bg-clip-text text-transparent animate-neon-pulse">
+          ALCA STORE
         </h1>
         
         <p className="text-xl md:text-2xl text-foreground/90 mb-8 max-w-2xl mx-auto leading-relaxed">
@@ -44,23 +44,23 @@ const Hero = () => {
         {/* Stats */}
         <div className="grid grid-cols-3 gap-8 mt-16 max-w-md mx-auto">
           <div className="text-center">
-            <div className="text-2xl font-bold text-neon-purple">500+</div>
+            <div className="text-2xl font-bold text-neon-blue">500+</div>
             <div className="text-sm text-muted-foreground">Modelos</div>
           </div>
           <div className="text-center">
-            <div className="text-2xl font-bold text-neon-blue">50+</div>
+            <div className="text-2xl font-bold text-neon-cyan">50+</div>
             <div className="text-sm text-muted-foreground">Times</div>
           </div>
           <div className="text-center">
-            <div className="text-2xl font-bold text-neon-pink">24h</div>
+            <div className="text-2xl font-bold text-neon-electric">24h</div>
             <div className="text-sm text-muted-foreground">Entrega</div>
           </div>
         </div>
       </div>
 
       {/* Decorative elements */}
-      <div className="absolute top-1/4 left-10 w-20 h-20 bg-neon-purple/20 rounded-full blur-xl animate-pulse" />
-      <div className="absolute bottom-1/4 right-10 w-32 h-32 bg-neon-pink/20 rounded-full blur-xl animate-pulse delay-1000" />
+      <div className="absolute top-1/4 left-10 w-20 h-20 bg-neon-blue/20 rounded-full blur-xl animate-pulse" />
+      <div className="absolute bottom-1/4 right-10 w-32 h-32 bg-neon-cyan/20 rounded-full blur-xl animate-pulse delay-1000" />
     </section>
   );
 };

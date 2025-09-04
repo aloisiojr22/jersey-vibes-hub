@@ -1,10 +1,10 @@
 import { ShoppingCart, Search, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { useState } from "react";
+import { useCart } from "@/components/CartContext";
 
 const Header = () => {
-  const [cartItems, setCartItems] = useState(0);
+  const { getTotalItems } = useCart();
 
   return (
     <header className="bg-background/95 backdrop-blur-md border-b border-border sticky top-0 z-50">
@@ -12,8 +12,8 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="text-2xl font-bold bg-gradient-to-r from-neon-purple to-neon-pink bg-clip-text text-transparent animate-neon-pulse">
-              ⚽ Jersey Store
+            <div className="text-2xl font-bold bg-gradient-to-r from-neon-blue to-neon-cyan bg-clip-text text-transparent animate-neon-pulse">
+              ⚽ Alca Store
             </div>
           </div>
 
@@ -39,9 +39,9 @@ const Header = () => {
           <div className="flex items-center space-x-4">
             <Button variant="ghost" size="sm" className="relative hover:bg-card">
               <ShoppingCart className="h-5 w-5" />
-              {cartItems > 0 && (
+              {getTotalItems() > 0 && (
                 <span className="absolute -top-2 -right-2 bg-accent text-accent-foreground text-xs rounded-full h-5 w-5 flex items-center justify-center animate-pulse">
-                  {cartItems}
+                  {getTotalItems()}
                 </span>
               )}
             </Button>
